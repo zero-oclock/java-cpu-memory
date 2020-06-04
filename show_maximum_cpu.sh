@@ -82,7 +82,7 @@ do
 	echo "进程:${pid}    线程:${tid}  负载:${cpu_load}%  大于${t_threshold}%"
 	pid_hex=`printf "%x\n" $tid`
 	pid_hex="0x"${pid_hex}
-	echo -e ">>>>>>>>>>>>>>>>高CPU线程:" >> cpu_result.log
+	echo -e ">>>>>>>>>>>>>>>>高CPU线程(${cpu_load}%):" >> cpu_result.log
 	jstack $pid | grep -A200 $pid_hex >> cpu_result_tmp.log
 	process_stack $pid_hex
 	cat cpu_result_tmp.log >> cpu_result.log
