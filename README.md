@@ -2,7 +2,7 @@
 - 执行show_maximum_cpu.sh脚本，输出高CPU占用率的线程堆栈信息
 - 执行show_maximum_memery.sh脚本，输出高内存占用率的线程堆栈信息
 
-## 实时CPU占用率分析（定位到线程堆栈）
+## 一、CPU占用率分析（定位到线程堆栈）
 1. 赋予脚本执行权限  
    chmod +x show_maximum_cpu.sh
 2. 运行CPU分析脚本  
