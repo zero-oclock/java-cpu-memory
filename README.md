@@ -5,10 +5,9 @@
 1. 赋予脚本执行权限  
    chmod +x show_maximum_cpu.sh
 2. 运行CPU分析脚本  
+  输入命令: sh show_maximum_cpu.sh
 ```
-sh show_maximum_cpu.sh
-
-执行结果:  
+  执行结果:  
      分析CPU占用最高的5个进程，取其中占用率超过30%的进程:  
      进程:16495    负载:212.5%  大于30%  
      进程:14670    负载:6.2%  小于30%，无需排查  
