@@ -4,7 +4,7 @@
 
 ## 一、CPU占用率分析（定位到线程堆栈）
 1. 赋予脚本执行权限  
-   chmod +x show_maximum_cpu.sh
+- chmod +x show_maximum_cpu.sh
 2. 运行CPU分析脚本  
 - 输入命令: sh show_maximum_cpu.sh
 ```
