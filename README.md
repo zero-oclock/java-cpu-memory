@@ -6,6 +6,6 @@
    chmod +x show_maximum_cpu.sh
 2. 运行CPU分析脚本  
    sh show_maximum_cpu.sh  
-   ![执行脚本打印](https://github.com/linjunbo/java-cpu-memery/blob/master/show_maximum_cpu.png)
+   ![执行脚本打印](https://raw.githubusercontent.com/linjunbo/java-cpu-memery/master/show_maximum_cpu.png)
 3. 打开分析结果文件（高CPU堆栈信息）  
    less cpu_result.log
