@@ -1,7 +1,7 @@
 # java-cpu-memery
 - A script that can quickly locate CPU and memory problems on the Java line（一个可以快速定位Java线上CPU和内存问题的脚本）
 
-# 即使CPU占用分析
+# 实时CPU占用率分析（定位到线程堆栈）
 1. 赋予脚本执行权限  
    chmod +x show_maximum_cpu.sh
 2. 运行CPU分析脚本  
@@ -25,4 +25,28 @@
      请打开cpu_result.log文件查看CPU高负载堆栈信息
 ```
 3. 打开分析结果文件（高CPU堆栈信息）  
-   less cpu_result.log
+- less cpu_result.log
+```
+     >>>>>>>>>>>>>>>>高CPU线程(99.9%):  
+     "org.springframework.kafka.KafkaListenerEndpointContainer#4-9-C-1" #80 prio=5 os_prio=0 tid=0x00007f5d15210800 nid=0x40c5 runnable [0x00007f5c834a9000]  
+     java.lang.Thread.State: RUNNABLE  
+        at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)  
+        at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)  
+        at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)  
+        at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)  
+        - locked <0x00000000f2ca93a8> (a sun.nio.ch.Util$3)  
+        - locked <0x00000000f2ca9398> (a java.util.Collections$UnmodifiableSet)  
+        - locked <0x00000000f2ca9150> (a sun.nio.ch.EPollSelectorImpl)  
+        at sun.nio.ch.SelectorImpl.selectNow(SelectorImpl.java:105)  
+        at org.apache.kafka.common.network.Selector.select(Selector.java:672)  
+        at org.apache.kafka.common.network.Selector.poll(Selector.java:396)  
+        at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:460)  
+        at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:258)  
+        at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:230)  
+        at org.apache.kafka.clients.consumer.KafkaConsumer.pollOnce(KafkaConsumer.java:1164)  
+        at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1111)  
+        at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:654)  
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)  
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)  
+        at java.lang.Thread.run(Thread.java:745)  
+```
