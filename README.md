@@ -1,5 +1,6 @@
 # java-cpu-memery
-- A script that can quickly locate CPU and memory problems on the Java line（一个可以快速定位Java线上CPU和内存问题的脚本）
+- 执行show_maximum_cpu.sh脚本，输出高CPU占用率的线程堆栈信息
+- 执行show_maximum_memery.sh脚本，输出高内存占用率的线程堆栈信息
 
 ## 实时CPU占用率分析（定位到线程堆栈）
 1. 赋予脚本执行权限  
