@@ -25,7 +25,7 @@
      请打开cpu_result.log文件查看CPU高负载堆栈信息
 ```
 3. 打开分析结果文件（高CPU堆栈信息）  
-- less cpu_result.log
+- 输入命令: less cpu_result.log
 ```
      >>>>>>>>>>>>>>>>高CPU线程(99.9%):  
      "org.springframework.kafka.KafkaListenerEndpointContainer#4-9-C-1" #80 prio=5 os_prio=0 tid=0x00007f5d15210800 nid=0x40c5 runnable [0x00007f5c834a9000]  
