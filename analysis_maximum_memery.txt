@@ -1,0 +1,21 @@
+排查前须知：
+1、内存占用率过高，会导致JVM超高频率full gc，频繁full gc会使CPU打满
+2、基础模块如数据库出现瓶颈，会导致访问数据库的服务阻塞，相关连的web站点表现是servlet线程阻塞，外部请求被拒绝，循环遍历sevlet线程池会占用CPU，此时JVM也会尝试将热点代码转化为机器码这个动作也会占用大量CPU
+3、死循环会占用大量CPU（概率比较低，比较容易解决）
+
+排查步骤：
+1、民工三连
+通过使用top free df查看是否内存占用率过高，找出占用率异常的进程pid
+2、进一步排查是否内存问题
+输入如下命令，查看JVM gc情况，gc频繁则进一步印证是内存问题
+jstat -gc pid 1000
+3、保存堆和栈的现场快照
+jstack pid > stack.log
+jmap -dump:format=b,file=heap.log pid
+4、分析栈
+查看线程个数是否过多：
+grep 'java.lang.Thread.State' stack.log | wc -l
+查看线程都在干嘛：
+grep -A 1 'java.lang.Thread.State' stack.log | grep -v 'java.lang.Thread.State' | sort | uniq -c | sort -n
+5、分析堆
+使用MAT分析heap.log，选择memory leak suspect，在Biggest Objects Retained Size饼状视图中查看内存占用情况，找出占用内存较多的对象，找出问题代码
