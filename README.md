@@ -53,3 +53,4 @@
         at java.lang.Thread.run(Thread.java:745)  
 ```
 ## 二、内存占用率分析
+- 打开analysis_maximum_memery.txt文件，按步骤分析
