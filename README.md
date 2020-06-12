@@ -1,4 +1,4 @@
-# java-cpu-memery
+# java-cpu-memory
 - 执行show_maximum_cpu.sh脚本，输出高CPU占用率的线程堆栈信息
 - 执行show_maximum_memory.sh脚本，输出高内存占用率的线程堆栈信息
 
