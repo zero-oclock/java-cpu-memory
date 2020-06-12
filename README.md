@@ -1,6 +1,6 @@
 # java-cpu-memery
 - 执行show_maximum_cpu.sh脚本，输出高CPU占用率的线程堆栈信息
-- 执行show_maximum_memery.sh脚本，输出高内存占用率的线程堆栈信息
+- 执行show_maximum_memory.sh脚本，输出高内存占用率的线程堆栈信息
 
 ## 一、CPU占用率分析
 1. 赋予脚本执行权限  
@@ -53,4 +53,4 @@
         at java.lang.Thread.run(Thread.java:745)  
 ```
 ## 二、内存占用率分析
-- 打开analysis_maximum_memery.txt文件，按步骤分析
+- 打开analysis_maximum_memory.txt文件，按步骤分析
